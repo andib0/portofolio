@@ -1,0 +1,45 @@
+.container {
+  background-color: var(--background);
+  /* padding: 35px; */
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+}
+
+.lCenter {
+  width: 75%;
+  align-self: center;
+}
+
+.greet {
+  color: var(--primary);
+  font-size: var(--text-md);
+  line-height: 25px;
+}
+
+.titleOne {
+  color: var(--secondary);
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  line-height: 50px;
+  font-family: var(--font-sans);
+}
+
+.titleTwo {
+  color: white;
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  line-height: 50px;
+  font-family: var(--font-sans);
+}
+
+.titleContent {
+  color: var(--tertiary);
+  font-size: 1rem;
+  line-height: 25px;
+  width: 70%;
+}

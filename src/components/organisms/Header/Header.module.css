@@ -1,0 +1,22 @@
+.header {
+  background-color: var(--background);
+  padding: 1rem;
+  top: 0;
+  position: sticky;
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.container {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: space-between;
+  }
+}

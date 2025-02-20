@@ -1,0 +1,21 @@
+.button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #a6a6a6; /* This will set the color of the icon */
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: #f2f1f0;
+}
+
+@media (max-width: 768px) {
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

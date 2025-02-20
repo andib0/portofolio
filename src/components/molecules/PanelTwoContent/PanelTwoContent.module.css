@@ -1,0 +1,22 @@
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.socialLink {
+  color: var(--tertiary);
+  transition: var(--transition);
+  writing-mode: vertical-rl;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.socialLink:hover {
+  color: var(--primary);
+  text-decoration: none;
+  transform: translateY(-5px);
+}

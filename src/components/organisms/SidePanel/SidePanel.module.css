@@ -1,0 +1,12 @@
+.container {
+  width: 5%;
+  height: 100%;
+  position: fixed;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: none;
+    position: sticky;
+  }
+}

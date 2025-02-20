@@ -1,0 +1,26 @@
+.imageWrapper {
+  width: 90%;
+  height: auto;
+}
+
+.image {
+  object-fit: contain;
+  width: 90% !important;
+  position: relative !important;
+  height: unset !important;
+  transition: var(--transition);
+
+  border-bottom: 2px solid var(--primary);
+  border-right: 2px solid var(--primary);
+  padding-bottom: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.image:hover {
+  filter: none;
+  border: none;
+  padding-bottom: 0;
+  padding-right: 0;
+}

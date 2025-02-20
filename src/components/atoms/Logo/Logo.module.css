@@ -1,0 +1,22 @@
+.logo {
+  color: var(--primary);
+  background-color: var(--background);
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: var(--transition);
+  border-bottom: 0.01px solid var(--primary);
+  padding-top: 1rem;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--secondary);
+  transform: translate(-2px, -2px);
+  border-bottom: 0.5px solid var(--secondary);
+}
+
+.logo:focus {
+  text-decoration: none;
+  transform: translate(-2px, -2px);
+}
