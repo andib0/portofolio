@@ -14,8 +14,8 @@ const ImageComponent: React.FC<TImageComponent> = ({ imageSrc, alt }) => {
         className={styles.image}
         src={imageSrc}
         alt={alt}
-        layout="fill"
-        objectFit="cover"
+        fill
+        // style={{ objectFit: "cover" }}
       />
     </div>
   );

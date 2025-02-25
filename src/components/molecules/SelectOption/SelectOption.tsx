@@ -19,12 +19,15 @@ const SelectOption: FC<SelectOptionProps> = ({
   const [selected, setSelected] = useState(initialSelected);
   const isSelected = (option: number) => selected === option;
 
+  console.log(options[selected]);
+
   return (
     options.length > 0 && (
       <div className={styles.container}>
-        {options.map((option, index) => (
-          <div className={styles.innerContainer} key={index}>
+        <div className={styles.leftContainer}>
+          {options.map((option, index) => (
             <div
+              key={index}
               className={`${styles.optionLabel} ${
                 isSelected(option.value) ? styles.selected : ""
               }`}
@@ -36,15 +39,29 @@ const SelectOption: FC<SelectOptionProps> = ({
                 {option.label}
               </p>
             </div>
+          ))}
+        </div>
+        <div className="rightContainer">
+          {
             <div className={styles.details}>
-              {selected === option.value && (
-                <p>
-                  {option.details.role} @ {option.details.company}
-                </p>
+              {options[selected].value >= 0 && (
+                <>
+                  <p className={styles.workLabel}>
+                    <span className={styles.workRole}>
+                      {options[selected].details.role}
+                    </span>{" "}
+                    @ {options[selected].details.company}
+                  </p>
+                  <ul className={styles.roleTasks}>
+                    {options[selected].details.tasks.map((item, index) => {
+                      return <li key={index}>{item}</li>;
+                    })}
+                  </ul>
+                </>
               )}
             </div>
-          </div>
-        ))}
+          }
+        </div>
       </div>
     )
   );

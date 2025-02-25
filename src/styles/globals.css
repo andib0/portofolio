@@ -1,5 +1,6 @@
 :root {
   --background: #0a192f;
+  --lighterBackground: #0d1f3a;
   --semitransparent-background: rgba(10, 25, 47, 0.95);
   --primary: #64ffda;
   --light: #e0e4f4;

@@ -3,7 +3,7 @@
 import ContentTop from "@/components/organisms/ContentTop/ContentTop";
 import "../styles/globals.css";
 import AboutMe from "@/components/organisms/AboutMe/AboutMe";
-// import Experience from "@/components/organisms/Experience/Experience";
+import Experience from "@/components/organisms/Experience/Experience";
 
 const technologies = [
   "Tanstack Query",
@@ -25,7 +25,7 @@ export default function Home() {
           alt="profile"
           imageSrc="/images/profile.jpg"
         />
-        {/* <Experience /> */}
+        <Experience />
       </div>
     </div>
   );

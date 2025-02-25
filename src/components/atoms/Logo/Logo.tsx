@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ isMenuOpen }) => (
     className={styles.logo}
     style={{ display: isMenuOpen ? "none" : "block" }}
   >
-    AB.
+    AB
   </Link>
 );
 

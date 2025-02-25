@@ -7,10 +7,10 @@ interface NavigationProps {
 }
 
 const navData = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "About" },
+  { href: "/", label: "Experience" },
+  { href: "/", label: "Work" },
+  { href: "/", label: "Contact" },
 ];
 
 const Navigation: React.FC<NavigationProps> = ({ isOpen }) => (

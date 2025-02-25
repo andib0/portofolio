@@ -30,7 +30,7 @@
 }
 
 .titleTwo {
-  color: white;
+  color: var(--tertiary);
   font-size: var(--text-6xl);
   font-weight: 800;
   line-height: 50px;
