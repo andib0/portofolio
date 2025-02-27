@@ -3,7 +3,7 @@
   min-width: 200px;
   max-width: 300px;
   height: auto;
-  /* scale: 1.2; */
+  position: relative;
 }
 
 .image {
@@ -12,7 +12,6 @@
   position: relative !important;
   height: unset !important;
   transition: var(--transition);
-
   border-bottom: 2px solid var(--primary);
   border-right: 2px solid var(--primary);
   padding-bottom: 20px;
@@ -21,9 +20,27 @@
   margin-left: 20px;
 }
 
+.imageWrapper::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: calc(90% - 20px);
+  height: calc(100% - 40px);
+  background-color: var(--primary);
+  opacity: 0.5;
+  mix-blend-mode: color;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.imageWrapper:hover::after {
+  opacity: 0;
+}
+
 .image:hover {
-  filter: none;
   border: none;
   padding-bottom: 0;
   padding-right: 0;
+  transition: 0.7s all;
 }

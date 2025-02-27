@@ -41,7 +41,7 @@ const SelectOption: FC<SelectOptionProps> = ({
             </div>
           ))}
         </div>
-        <div className="rightContainer">
+        <div className={styles.rightContainer}>
           {
             <div className={styles.details}>
               {options[selected].value >= 0 && (

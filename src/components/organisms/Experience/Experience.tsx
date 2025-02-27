@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Experience.module.css";
 import InfoTitle from "../InfoTitle/InfoTitle";
 import SelectOption from "@/components/molecules/SelectOption/SelectOption";
+import useScrollReveal from "@/hooks/useScrollReveal";
 
 const options = [
   {
@@ -52,10 +53,13 @@ const options = [
 ];
 
 const Experience = () => {
+  useScrollReveal();
   return (
     <div className={styles.container}>
-      <InfoTitle title="Where I've Worked" number="02" />
-      <SelectOption initialSelected={0} options={options} />
+      <div className="reveal-section">
+        <InfoTitle title="Where I've Worked" number="02" />
+        <SelectOption initialSelected={0} options={options} />
+      </div>
     </div>
   );
 };
