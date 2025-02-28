@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.featuredProject {
+  font-size: small;
+  color: var(--primary);
+}
+
+.title {
+  font-size: large;
+  color: var(--secondary);
+  font-weight: bold;
+}

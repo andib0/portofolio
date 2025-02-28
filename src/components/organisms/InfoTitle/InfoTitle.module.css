@@ -13,14 +13,16 @@
 
 .titleFormat {
   color: var(--secondary);
-  font-size: var(--text-md);
+  font-size: var(--text-2xl);
   font-weight: 700;
+  margin-left: 2px;
+  margin-bottom: 2px;
 }
 
 .horizontalLine {
-  height: 0.8px;
-  width: 35%;
-  background-color: var(--tertiary);
+  height: 1px;
+  width: 40%;
+  background-color: var(--line);
   margin-left: 2rem;
   margin-right: 2rem;
   margin-top: 6px;

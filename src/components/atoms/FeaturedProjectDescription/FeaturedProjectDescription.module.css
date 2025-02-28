@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: var(--foreground);
+  width: 60%;
+}
+
+.container .description {
+  font-size: var(--text-sm);
+  color: var(--tertiary);
+  background-color: transparent;
+  text-align: right;
+}

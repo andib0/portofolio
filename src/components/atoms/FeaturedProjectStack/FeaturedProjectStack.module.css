@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.stackItem {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: var(--text-sm);
+  color: var(--tertiary);
+}
