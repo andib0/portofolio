@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="48" height="48" rx="6" ry="6" fill="none" stroke="#2a4051" stroke-width="1.5" />
+  
+  <!-- Two-part Terminal Window Construction for proper corner handling -->
+  <!-- Top part with rounded corners -->
+  <path d="M2,7 A5,5 0 0 1 7,2 H43 A5,5 0 0 1 48,7 V10 H2 Z" fill="#0d1f3a" />
+  
+  <!-- Bottom part with properly shaped corners -->
+  <path d="M2,10 H48 V43 A5,5 0 0 1 43,48 H7 A5,5 0 0 1 2,43 Z" fill="#0a192f" />
+  
+  <!-- Window Control Buttons -->
+  <circle cx="6" cy="6" r="1.5" fill="#c84545" />
+  <circle cx="10" cy="6" r="1.5" fill="#FFBD2E" />
+  <circle cx="14" cy="6" r="1.5" fill="#27C93F" />
+  
+  <!-- Terminal Prompt - Fixed positioning -->
+  <text x="4" y="20" font-family="monospace" font-size="14" font-weight="bold" fill="#64ffda">
+    <tspan>&gt;</tspan>
+  </text>
+  
+  <!-- Blinking Underscore - Aligned with prompt -->
+  <text x="12" y="20" font-family="monospace" font-size="14" font-weight="bold" fill="#64ffda">
+    <tspan>_</tspan>
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.2s" repeatCount="indefinite" />
+  </text>
+</svg>

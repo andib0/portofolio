@@ -21,7 +21,7 @@ export default function Home() {
         <AboutMe
           items={technologies}
           alt="profile"
-          imageSrc="/images/profile.jpg"
+          imageSrc="/images/profile.png"
         />
         <Experience />
       </div>

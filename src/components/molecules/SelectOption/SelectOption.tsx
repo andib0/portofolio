@@ -19,8 +19,6 @@ const SelectOption: FC<SelectOptionProps> = ({
   const [selected, setSelected] = useState(initialSelected);
   const isSelected = (option: number) => selected === option;
 
-  console.log(options[selected]);
-
   return (
     options.length > 0 && (
       <div className={styles.container}>
