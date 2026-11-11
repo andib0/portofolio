@@ -1,12 +1,44 @@
+/*
+  Fixed to the bottom corners. The box itself ignores the pointer so it never
+  blocks the page; only the links inside it take clicks.
+*/
 .container {
-  width: 5%;
-  height: 100%;
   position: fixed;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: clamp(48px, var(--side-panel-width), 100px);
+  pointer-events: none;
+}
+
+.container a {
+  pointer-events: auto;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+/*
+  Reserve the panels' width on both sides of the page content, so the content
+  column can never run underneath a panel between 769px and ~1100px wide.
+  The panels are rendered just before <main> in the root layout.
+*/
+@media (min-width: 769px) {
+  .container ~ :global(main) {
+    padding-inline: clamp(48px, var(--side-panel-width), 100px);
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     display: none;
-    position: sticky;
   }
 }

@@ -1,32 +1,28 @@
-.container {
-  margin-top: 15px;
-}
-
 .list {
-  list-style-type: none;
   display: grid;
-  grid-template-rows: repeat(3, auto);
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-2) var(--spacing-4);
+  margin-top: var(--spacing-4);
 }
 
 .listItem {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  align-items: baseline;
+  gap: var(--spacing-2);
   color: var(--tertiary);
+  font-family: var(--font-mono);
   font-size: var(--text-sm);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 .arrow {
+  flex-shrink: 0;
   color: var(--primary);
   font-size: 10px;
-  flex-shrink: 0;
 }
 
-.itemText {
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media (max-width: 480px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

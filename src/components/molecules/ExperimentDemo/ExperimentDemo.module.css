@@ -1,0 +1,267 @@
+.demo {
+  margin-top: var(--spacing-8);
+  padding: var(--spacing-6);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--foreground);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.title {
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-lg);
+}
+
+.intro {
+  max-width: 400px;
+  margin-bottom: 0;
+  font-size: var(--text-sm);
+}
+
+/* Segmented switch between the two versions. */
+.toggle {
+  display: inline-flex;
+  flex: 0 0 auto;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.toggleOption {
+  min-height: 40px;
+  padding: 0 var(--spacing-4);
+  border: 0;
+  background-color: transparent;
+  color: var(--tertiary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.toggleOption:hover {
+  color: var(--primary);
+}
+
+.toggleOption:focus-visible {
+  outline-offset: -3px;
+}
+
+.toggleActive {
+  background-color: var(--primary-tint);
+  color: var(--primary);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: var(--spacing-8);
+  align-items: start;
+}
+
+/* The version on show sets the height; the other is lifted out of the flow. */
+.stage {
+  position: relative;
+  display: grid;
+}
+
+.cart {
+  grid-area: 1 / 1;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--background);
+  font-size: var(--text-xs);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s;
+}
+
+.hidden {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.cartTitle {
+  margin-bottom: 0;
+  color: var(--secondary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  color: var(--secondary);
+}
+
+.total {
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--line);
+  font-weight: 700;
+}
+
+.voucherField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.fieldLabel {
+  color: var(--tertiary);
+}
+
+.fieldRow {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+/* Drawn, not real: the basket is a picture of a form, not a form. */
+.input {
+  flex: 1 1 auto;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.apply {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--spacing-3);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--tertiary);
+}
+
+.banner,
+.tradeIn {
+  margin-bottom: 0;
+  padding: var(--spacing-3);
+  border-radius: 3px;
+  background-color: var(--lighterBackground);
+  line-height: 1.5;
+}
+
+.tradeInTitle {
+  margin-bottom: var(--spacing-1);
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.tradeInText {
+  margin-bottom: 0;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 2px var(--spacing-2);
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  color: var(--primary);
+}
+
+.voucherToggle {
+  align-self: flex-start;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.teaser {
+  margin-bottom: 0;
+  color: var(--secondary);
+}
+
+.checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 3px;
+  background-color: var(--primary);
+  color: var(--background);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.changesTitle {
+  margin-bottom: var(--spacing-3);
+  color: var(--secondary);
+  font-size: var(--text-sm);
+}
+
+.changeList {
+  margin-bottom: var(--spacing-6);
+}
+
+.change {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+  font-size: var(--text-sm);
+  transition: var(--transition);
+}
+
+.check {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--line);
+  transition: var(--transition);
+}
+
+.changeDone {
+  color: var(--secondary);
+}
+
+.changeDone .check {
+  color: var(--primary);
+}
+
+.note {
+  margin-bottom: 0;
+  font-size: var(--text-xs);
+}
+
+@media (max-width: 768px) {
+  .head {
+    flex-direction: column;
+    gap: var(--spacing-4);
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .demo {
+    padding: var(--spacing-4);
+  }
+}

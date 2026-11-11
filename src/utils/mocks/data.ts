@@ -32,6 +32,14 @@ export const site = {
   ],
 } as const;
 
+/* The image shown when a page is shared. The file is public/og.png. */
+export const shareImage = {
+  url: `${site.url}/og.png`,
+  width: 1200,
+  height: 630,
+  alt: "Andi Basha, JavaScript engineer. I build mobile and web things.",
+} as const;
+
 /* Header navigation. Numbers match the section titles on the page. */
 export const navItems = [
   { href: "/#about", label: "About", number: "01" },
@@ -67,7 +75,7 @@ export const partThreeDescription =
   "Some of the technologies I work with:";
 
 export const technologies = [
-  "JavaScript (ES6+)",
+  "JavaScript",
   "TypeScript",
   "React",
   "React Native",
@@ -193,4 +201,130 @@ export const contact = {
 
 export const footer = {
   credit: "Built by Andi Basha",
+} as const;
+
+/*
+  Files in /public are not prefixed automatically when the site is served
+  from a sub-path, so links to them go through this helper.
+*/
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const asset = (path: string) => `${basePath}${path}`;
+
+/* The PDF is generated from the /cv page by `npm run cv`. */
+export const resume = {
+  label: "CV",
+  file: "/Andi-Basha-CV.pdf",
+} as const;
+
+/* The interactive A/B test under the experience tabs. */
+export const experimentDemo = {
+  title: "An A/B test, in one toggle",
+  intro:
+    "Most of my work at Sogody looks like this: the same page, changed by a script and shown to half of the visitors. Switch between the two versions.",
+  toggleLabel: "Version shown",
+  control: "Control",
+  variant: "Variant",
+  changesTitle: "What the variant changes",
+  changes: [
+    "Voucher field folds into a link",
+    "Returns banner becomes a badge",
+    "Trade-in card becomes one line",
+  ],
+  note: "Illustrative example, not a client's page.",
+  cart: {
+    title: "Your basket",
+    item: "Smartphone, 256 GB",
+    price: "€799.00",
+    voucherLabel: "Voucher code",
+    voucherApply: "Apply",
+    voucherToggle: "Have a voucher?",
+    returnsBanner:
+      "Holiday returns: orders placed between 1 November and 24 December can be returned free of charge until 31 January.",
+    returnsBadge: "Free returns until 31 Jan",
+    tradeInTitle: "Trade in your old device",
+    tradeInText:
+      "Send us your old phone after the new one arrives and get up to €150 back, paid to your original payment method.",
+    tradeInTeaser: "Trade in and save up to €150",
+    totalLabel: "Total",
+    checkout: "Checkout",
+  },
+} as const;
+
+/* Extra facts used by the CV page only. */
+export const cv = {
+  summary:
+    "JavaScript engineer with a background in React Native and full-stack web work, currently building A/B tests and personalisation experiments for high-traffic e-commerce storefronts. On the side I build small, local-first apps with Rust and React Native.",
+  /** Jobs from this index on are listed in one line each under "Earlier". */
+  earlierFrom: 4,
+  skills: [
+    {
+      label: "Code",
+      items: ["JavaScript (ES6+)", "TypeScript", "Rust", "SQL", "HTML & CSS"],
+    },
+    {
+      label: "Web & mobile",
+      items: ["React", "Next.js", "React Native", "Expo", "Svelte", "Tauri"],
+    },
+    {
+      label: "Experimentation",
+      items: ["A/B testing", "Adobe Target", "Insider", "Adobe Analytics"],
+    },
+    {
+      label: "Backend & data",
+      items: ["Node.js", "Express", "GraphQL", "Prisma", "PostgreSQL", "SQLite"],
+    },
+    {
+      label: "Tooling",
+      items: ["Git", "TanStack Query", "Zustand", "Playwright", "Sentry"],
+    },
+  ],
+  education: [
+    {
+      school: "UBT, University for Business and Technology",
+      detail: "Computer Science and Engineering",
+      place: "Prishtina",
+    },
+  ],
+  courses: [
+    { name: "Red Teaming Certified Professional", by: "Findbug", year: "2024" },
+    {
+      name: "Mobile App Development Bootcamp",
+      by: "UNDP, GIZ & Cactus",
+      year: "2023",
+    },
+    {
+      name: "Advanced JavaScript & React",
+      by: "Povio Engineering Academy",
+      year: "2022",
+    },
+  ],
+  languages: ["Albanian (native)", "English (fluent)"],
+  projects: [
+    {
+      name: "Glint",
+      line: "Windows tray app for DDC/CI monitor control, in Rust on raw Win32",
+      url: "github.com/andib0/glint",
+    },
+    {
+      name: "Onyx",
+      line: "Local-first training & nutrition planner: Expo app, Express API",
+      url: "github.com/andib0/onyx",
+    },
+    {
+      name: "Moneywort",
+      line: "Local-first Android finance app in Rust, Tauri 2 & Svelte 5",
+      url: "github.com/andib0/moneywort",
+    },
+  ],
+  headings: {
+    summary: "Summary",
+    experience: "Experience",
+    earlier: "Earlier",
+    projects: "Projects",
+    skills: "Skills",
+    education: "Education",
+    courses: "Courses",
+    languages: "Languages",
+  },
+  download: "Download PDF",
 } as const;

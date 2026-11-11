@@ -1,7 +1,9 @@
 .container {
   color: var(--tertiary);
   font-size: var(--text-base);
-  width: 75%;
-  justify-content: center;
-  align-items: center;
+}
+
+.highlight {
+  color: var(--primary);
+  font-size: var(--text-sm);
 }

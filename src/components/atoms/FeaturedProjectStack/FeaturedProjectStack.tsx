@@ -1,19 +1,28 @@
 import React, { FC } from "react";
 import styles from "./FeaturedProjectStack.module.css";
+import type { ProjectAlign } from "@/utils/mocks/projects";
 
 interface FeaturedProjectStackProps {
   stack: string[];
+  align?: ProjectAlign;
+  className?: string;
 }
 
-const FeaturedProjectStack: FC<FeaturedProjectStackProps> = ({ stack }) => {
+const FeaturedProjectStack: FC<FeaturedProjectStackProps> = ({
+  stack,
+  align = "left",
+  className = "",
+}) => {
   return (
-    <div className={styles.container}>
-      {stack.map((item, index) => (
-        <span key={index} className={styles.stackItem}>
+    <ul
+      className={`${styles.container} ${align === "right" ? styles.right : ""} ${className}`}
+    >
+      {stack.map((item) => (
+        <li key={item} className={styles.stackItem}>
           {item}
-        </span>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

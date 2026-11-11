@@ -265,3 +265,43 @@ html[data-reveal="on"] .reveal-section.is-revealed {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*
+  Print: dark ink on white paper, without the site chrome. The CV page relies
+  on this to produce its PDF, and any other page prints cleanly too.
+*/
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --background: #ffffff;
+    --lighterBackground: #f4f6f8;
+    --foreground: #f4f6f8;
+    --primary: #0b6e5f;
+    --primary-tint: transparent;
+    --secondary: #0a192f;
+    --tertiary: #3b4a63;
+    --line: #c9d1dc;
+  }
+
+  body > header,
+  body > footer,
+  body > div,
+  body > nextjs-portal,
+  .skip-link {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  html[data-reveal="on"] .reveal-section {
+    opacity: 1;
+    transform: none;
+  }
+}

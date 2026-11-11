@@ -9,8 +9,15 @@ type TImageComponent = {
 
 const ImageComponent: React.FC<TImageComponent> = ({ image, alt }) => {
   return (
-    <div className={styles.imageWrapper}>
-      <Image className={styles.image} src={image} alt={alt} fill />
+    <div className={styles.wrapper}>
+      <div className={styles.frame}>
+        <Image
+          className={styles.image}
+          src={image}
+          alt={alt}
+          sizes="(max-width: 768px) 70vw, 300px"
+        />
+      </div>
     </div>
   );
 };

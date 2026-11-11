@@ -1,0 +1,8 @@
+/* Sits last in a panel pinned to bottom: 0, so it always meets the bottom edge. */
+.line {
+  display: block;
+  flex-shrink: 0;
+  width: 1px;
+  height: clamp(60px, 15vh, 120px);
+  background-color: var(--tertiary);
+}

@@ -1,0 +1,80 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px;
+  border-radius: 4px;
+  background-color: var(--foreground);
+  transition: var(--transition);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-5px);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.folder {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+
+/* Icon links sit above the stretched title link so they stay clickable. */
+.links {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin-bottom: var(--spacing-3);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.titleLink {
+  color: var(--secondary);
+  transition: var(--transition);
+}
+
+.titleLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+
+.card:hover .titleLink,
+.titleLink:focus-visible {
+  color: var(--primary);
+}
+
+.description {
+  margin-bottom: var(--spacing-6);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--tertiary);
+}
+
+.stack {
+  margin-top: auto;
+}
+
+.stack li {
+  font-size: var(--text-xs);
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--spacing-6);
+  }
+}

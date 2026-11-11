@@ -1,30 +1,44 @@
-.container {
+.title {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: var(--spacing-2);
   width: 100%;
-}
-
-.noFormat {
-  color: var(--primary);
-  font-size: (--text-md);
-  font-weight: 700;
-}
-
-.titleFormat {
+  margin-bottom: 40px;
   color: var(--secondary);
   font-size: var(--text-2xl);
   font-weight: 700;
-  margin-left: 2px;
-  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
-.horizontalLine {
+.number {
+  flex-shrink: 0;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  font-weight: 700;
+}
+
+.text {
+  min-width: 0;
+  white-space: normal;
+}
+
+/* Takes whatever width is left (up to 300px) and shrinks to nothing first. */
+.line {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 300px;
   height: 1px;
-  width: 40%;
+  margin-left: var(--spacing-6);
   background-color: var(--line);
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 6px;
-  overflow: visible;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: var(--text-xl);
+  }
+
+  .line {
+    margin-left: var(--spacing-3);
+  }
 }

@@ -1,12 +1,23 @@
 .container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--spacing-2) var(--spacing-4);
+}
+
+.right {
   justify-content: flex-end;
 }
+
 .stackItem {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  font-family: var(--font-mono);
   font-size: var(--text-sm);
   color: var(--tertiary);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .right {
+    justify-content: flex-start;
+  }
 }

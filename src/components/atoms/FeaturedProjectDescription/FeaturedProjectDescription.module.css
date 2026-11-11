@@ -1,16 +1,27 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 20px;
+  padding: var(--spacing-6);
   border-radius: 3px;
   background-color: var(--foreground);
-  width: 60%;
+  text-align: left;
 }
 
-.container .description {
-  font-size: var(--text-sm);
-  color: var(--tertiary);
-  background-color: transparent;
+.right {
   text-align: right;
+}
+
+.description {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--tertiary);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-4);
+  }
+
+  .right {
+    text-align: left;
+  }
 }

@@ -1,22 +1,35 @@
 .header {
-  background-color: var(--background);
-  padding: 1rem;
-  top: 0;
   position: sticky;
-  justify-content: flex-start;
+  top: 0;
   z-index: 10;
+  height: var(--header-height);
+}
+
+/*
+  The blur lives on a pseudo-element: a backdrop-filter on the header itself
+  would become the containing block of the fixed mobile menu inside it.
+*/
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--semitransparent-background);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .container {
-  padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  height: 100%;
+  padding: 0 var(--spacing-8);
 }
 
 @media (max-width: 768px) {
   .container {
-    justify-content: space-between;
+    padding: 0 var(--spacing-4);
   }
 }

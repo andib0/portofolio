@@ -1,18 +1,6 @@
-.socialLinks {
+.panel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.8rem;
-  height: 100%;
-}
-
-.socialLink {
-  color: var(--tertiary);
-  transition: var(--transition);
-}
-
-.socialLink:hover {
-  color: var(--primary);
-  transform: translateY(-4px);
+  gap: var(--spacing-4);
 }

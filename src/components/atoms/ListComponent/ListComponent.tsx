@@ -7,16 +7,16 @@ type TListComponent = {
 
 const ListComponent: React.FC<TListComponent> = ({ items }) => {
   return (
-    <div className={styles.container}>
-      <ul className={styles.list}>
-        {items.map((item, index) => (
-          <li key={index} className={styles.listItem}>
-            <span className={styles.arrow}>▷</span>
-            <span className={styles.itemText}>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className={styles.list}>
+      {items.map((item) => (
+        <li key={item} className={styles.listItem}>
+          <span className={styles.arrow} aria-hidden="true">
+            ▷
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 };
 

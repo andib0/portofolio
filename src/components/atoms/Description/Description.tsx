@@ -15,9 +15,7 @@ const Description: React.FC<TDescription> = ({
   return (
     <div className={styles.container}>
       <p>{partOneDescription}</p>
-      <p style={{ color: "var(--primary)", fontSize: "var(--text-sm)" }}>
-        {partTwoDescription}
-      </p>
+      <p className={styles.highlight}>{partTwoDescription}</p>
       <p>{partThreeDescription}</p>
     </div>
   );

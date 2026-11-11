@@ -1,0 +1,50 @@
+/*
+  Twelve-column row: the image spans seven columns and the content six from
+  the other edge, so they share one column and the content overlaps the image.
+*/
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  column-gap: var(--spacing-3);
+}
+
+.image {
+  grid-column: 1 / 8;
+  grid-row: 1;
+}
+
+.content {
+  grid-column: 7 / -1;
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.reversed .image {
+  grid-column: 6 / -1;
+}
+
+.reversed .content {
+  grid-column: 1 / 7;
+}
+
+@media (max-width: 768px) {
+  .row,
+  .reversed {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--spacing-6);
+  }
+
+  .image,
+  .reversed .image {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .content,
+  .reversed .content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

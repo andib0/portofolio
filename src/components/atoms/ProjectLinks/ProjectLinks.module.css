@@ -1,0 +1,41 @@
+/*
+  Each icon sits in a 40px tap target; the negative margin lines the glyph up
+  with the text edge above it instead of the edge of its hit area.
+*/
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: calc(var(--spacing-2) * -1);
+}
+
+.right {
+  justify-content: flex-end;
+  margin-left: 0;
+  margin-right: calc(var(--spacing-2) * -1);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  color: var(--secondary);
+  font-size: var(--text-xl);
+  transition: var(--transition);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--primary);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .right {
+    justify-content: flex-start;
+    margin-left: calc(var(--spacing-2) * -1);
+    margin-right: 0;
+  }
+}

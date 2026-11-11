@@ -1,31 +1,18 @@
 .logo {
-  /* color: var(--secondary);
-  background-color: var(--background); */
-  font-size: 2rem;
-  font-weight: lighter;
-  /* font-weight: 900; */
-  text-decoration: none;
-  transition: var(--transition);
-  padding-left: 10px;
-  padding-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 2px;
-  position: relative;
-  letter-spacing: -5px;
-  /* padding-top: 1rem; */
-  overflow: hidden;
-  transition: 0.3s all var(--transition);
+  transition: var(--transition);
 }
 
 .logo:hover {
-  text-decoration: none;
-  color: var(--primary);
-  transition: 0.3s all var(--transition);
   scale: 1.05;
 }
 
 .logo:active {
   scale: 0.95;
-}
-.logo:focus {
-  text-decoration: none;
 }

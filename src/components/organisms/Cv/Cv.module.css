@@ -1,0 +1,233 @@
+.cv {
+  position: relative;
+  padding-top: var(--spacing-12);
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: var(--spacing-8);
+  padding: 0 var(--spacing-4);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-size: var(--text-sm);
+  transition: var(--transition);
+}
+
+.download:hover,
+.download:focus-visible {
+  background-color: var(--primary-tint);
+}
+
+.header {
+  margin-bottom: var(--spacing-8);
+}
+
+.name {
+  margin-bottom: var(--spacing-1);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.role {
+  margin-bottom: var(--spacing-3);
+  color: var(--primary);
+  font-size: var(--text-base);
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1) var(--spacing-6);
+  font-size: var(--text-sm);
+}
+
+.contacts a {
+  color: var(--tertiary);
+}
+
+.contacts a:hover {
+  color: var(--primary);
+}
+
+.block {
+  margin-bottom: var(--spacing-8);
+}
+
+/* Small teal mono heading with a hairline, echoing the section titles. */
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+.heading::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background-color: var(--line);
+}
+
+.text,
+.line {
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-sm);
+}
+
+.line strong {
+  color: var(--secondary);
+  font-family: var(--font-sans);
+}
+
+.job {
+  margin-bottom: var(--spacing-6);
+  break-inside: avoid;
+}
+
+.jobHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+}
+
+.jobTitle {
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-base);
+}
+
+.company {
+  color: var(--primary);
+}
+
+.time {
+  flex: 0 0 auto;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.tasks {
+  font-size: var(--text-sm);
+}
+
+.task {
+  position: relative;
+  margin-bottom: var(--spacing-1);
+  padding-left: var(--spacing-4);
+}
+
+.task::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.skills {
+  font-size: var(--text-sm);
+}
+
+.skillRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-1);
+}
+
+.skillRow dt {
+  color: var(--secondary);
+}
+
+@media (max-width: 600px) {
+  .jobHead {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .skillRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-bottom: var(--spacing-3);
+  }
+}
+
+/* On paper everything tightens so the CV fits on a single A4 page. */
+@media print {
+  .cv {
+    max-width: none;
+    padding: 0;
+    font-size: 8.5pt;
+    line-height: 1.38;
+  }
+
+  .download {
+    display: none;
+  }
+
+  .header {
+    margin-bottom: 10pt;
+  }
+
+  .name {
+    font-size: 24pt;
+  }
+
+  .role {
+    margin-bottom: 4pt;
+    font-size: 10pt;
+  }
+
+  .contacts {
+    gap: 0 12pt;
+    font-size: 8pt;
+  }
+
+  .block {
+    margin-bottom: 9pt;
+  }
+
+  .heading {
+    margin-bottom: 5pt;
+    font-size: 8.5pt;
+  }
+
+  .text,
+  .line,
+  .tasks,
+  .skills {
+    margin-bottom: 3pt;
+    font-size: 8.5pt;
+  }
+
+  .job {
+    margin-bottom: 7pt;
+  }
+
+  .jobTitle {
+    margin-bottom: 2pt;
+    font-size: 10pt;
+  }
+
+  .time {
+    margin-bottom: 2pt;
+    font-size: 8pt;
+  }
+
+  .task {
+    margin-bottom: 1pt;
+    padding-left: 10pt;
+  }
+
+  .skillRow {
+    grid-template-columns: 105pt minmax(0, 1fr);
+    margin-bottom: 1pt;
+  }
+}

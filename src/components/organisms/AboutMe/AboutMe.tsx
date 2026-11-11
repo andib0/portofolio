@@ -10,19 +10,27 @@ import {
   partThreeDescription,
   partTwoDescription,
   sections,
+  site,
   technologies,
 } from "@/utils/mocks/data";
 
 const AboutMe: React.FC = () => {
+  const titleId = `${sections.about.id}-title`;
+
   return (
-    <section id={sections.about.id} className={styles.container}>
+    <section
+      id={sections.about.id}
+      className="section"
+      aria-labelledby={titleId}
+    >
       <div className="reveal-section">
         <InfoTitle
+          id={titleId}
           title={sections.about.title}
           number={sections.about.number}
         />
-        <div className={styles.innerContainer}>
-          <div>
+        <div className={styles.inner}>
+          <div className={styles.text}>
             <Description
               partOneDescription={partOneDescription}
               partTwoDescription={partTwoDescription}
@@ -30,7 +38,9 @@ const AboutMe: React.FC = () => {
             />
             <ListComponent items={technologies} />
           </div>
-          <ImageComponent alt="Portrait of Andi Basha" image={profile} />
+          <div className={styles.portrait}>
+            <ImageComponent alt={`Portrait of ${site.name}`} image={profile} />
+          </div>
         </div>
       </div>
     </section>

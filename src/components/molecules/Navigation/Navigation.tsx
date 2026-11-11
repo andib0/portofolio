@@ -1,28 +1,50 @@
 import React from "react";
 import NavLink from "../../atoms/NavLink/NavLink";
 import styles from "./Navigation.module.css";
+import { asset, navItems, resume } from "@/utils/mocks/data";
 
 interface NavigationProps {
+  id: string;
   isOpen: boolean;
+  onNavigate: () => void;
+  /** Id of the section currently in view, if any. */
+  activeId?: string | null;
 }
 
-const navData = [
-  { href: "/", label: "About" },
-  { href: "/", label: "Experience" },
-  { href: "/", label: "Work" },
-  { href: "/", label: "Contact" },
-];
-
-const Navigation: React.FC<NavigationProps> = ({ isOpen }) => (
-  <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>
-    <ul className={styles.navList}>
-      {navData.map((item, index) => (
-        <li key={item.href}>
-          <span className={styles.navIndex}>{index}.</span>
-          <NavLink href={item.href}>{item.label}</NavLink>
+const Navigation: React.FC<NavigationProps> = ({
+  id,
+  isOpen,
+  onNavigate,
+  activeId,
+}) => (
+  <nav
+    id={id}
+    aria-label="Main"
+    className={`${styles.nav} ${isOpen ? styles.open : ""}`}
+  >
+    <ol className={styles.navList}>
+      {navItems.map((item) => (
+        <li key={item.href} className={styles.navItem}>
+          <NavLink
+            href={item.href}
+            onClick={onNavigate}
+            isActive={item.href.endsWith(`#${activeId}`)}
+          >
+            <span className={styles.navIndex}>{item.number}.</span>
+            {item.label}
+          </NavLink>
         </li>
       ))}
-    </ul>
+    </ol>
+    <a
+      className={styles.resume}
+      href={asset(resume.file)}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onNavigate}
+    >
+      {resume.label}
+    </a>
   </nav>
 );
 

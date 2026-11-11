@@ -7,7 +7,7 @@ import SidePanel from "@/components/organisms/SidePanel/SidePanel";
 import PanelOneContent from "@/components/molecules/PanelOneContent/PanelOneContent";
 import PanelTwoContent from "@/components/molecules/PanelTwoContent/PanelTwoContent";
 import RevealInit from "@/components/atoms/RevealInit/RevealInit";
-import { site } from "@/utils/mocks/data";
+import { shareImage, site, technologies } from "@/utils/mocks/data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,13 +38,38 @@ export const metadata: Metadata = {
     description: site.description,
     url: "./",
     locale: "en_US",
+    images: [shareImage],
   },
-  twitter: { card: "summary_large_image", title, description: site.description },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: site.description,
+    images: [shareImage.url],
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0a192f",
   colorScheme: "dark",
+};
+
+/* Structured data, so search engines can tie the site to a person. */
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: `${site.url}/`,
+  image: shareImage.url,
+  jobTitle: site.role,
+  email: `mailto:${site.email}`,
+  worksFor: { "@type": "Organization", name: "Sogody", url: "https://sogody.com" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Prishtina",
+    addressCountry: "XK",
+  },
+  sameAs: [site.github, site.linkedin],
+  knowsAbout: technologies,
 };
 
 /*
@@ -66,6 +91,10 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body>
         <a className="skip-link" href="#content">

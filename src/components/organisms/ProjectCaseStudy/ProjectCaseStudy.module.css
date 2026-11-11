@@ -1,0 +1,120 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  min-height: 40px;
+  margin-bottom: var(--spacing-8);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.back:hover,
+.back:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.overline {
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--primary);
+}
+
+.title {
+  margin-bottom: var(--spacing-6);
+  font-size: clamp(var(--text-4xl), 8vw, var(--text-7xl));
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--secondary);
+}
+
+.summary {
+  max-width: 640px;
+  margin-bottom: var(--spacing-6);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--tertiary);
+}
+
+.links {
+  margin-top: var(--spacing-3);
+}
+
+/* Facts come first in the markup so they lead on phones; on desktop they move to the side. */
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(0, 1fr);
+  column-gap: var(--spacing-16);
+  align-items: start;
+}
+
+.sections {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.facts {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-6));
+}
+
+.heading {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.paragraph {
+  line-height: 1.8;
+  color: var(--tertiary);
+}
+
+.paragraph:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .page {
+    gap: var(--spacing-8);
+  }
+
+  .summary {
+    font-size: var(--text-base);
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--spacing-8);
+  }
+
+  .facts,
+  .sections {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .facts {
+    position: static;
+  }
+}

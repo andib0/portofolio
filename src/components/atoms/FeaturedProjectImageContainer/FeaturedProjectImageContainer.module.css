@@ -1,0 +1,64 @@
+/*
+  Every screenshot, desktop or phone, sits on the same 16:10 canvas so the
+  featured rows read as one set.
+*/
+.frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--lighterBackground);
+}
+
+.canvas {
+  position: absolute;
+  inset: var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-6);
+}
+
+.image {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  object-fit: contain;
+}
+
+.half {
+  max-width: calc(50% - var(--spacing-3));
+}
+
+/* Teal tint, as on the About portrait; it clears on hover and focus. */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary);
+  opacity: 0.5;
+  mix-blend-mode: color;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+.frame:hover::after,
+.frame:focus-visible::after {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    inset: var(--spacing-4);
+    gap: var(--spacing-4);
+  }
+
+  .half {
+    max-width: calc(50% - var(--spacing-2));
+  }
+}

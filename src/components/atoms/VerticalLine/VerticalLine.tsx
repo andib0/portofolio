@@ -1,16 +1,6 @@
 import React from "react";
-const VerticalLine = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "15%",
-        backgroundColor: "var(--tertiary)",
-        width: "1px",
-      }}
-    />
-  );
-};
+import styles from "./VerticalLine.module.css";
+
+const VerticalLine = () => <span className={styles.line} aria-hidden="true" />;
 
 export default VerticalLine;

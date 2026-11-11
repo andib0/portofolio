@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "npx serve out",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "cv": "next build && node scripts/make-cv.mjs"
   },
   "dependencies": {
     "next": "^15.5.29",

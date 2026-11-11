@@ -1,16 +1,15 @@
 .navLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--spacing-2);
   color: var(--secondary);
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.3s ease-in;
+  font-size: var(--text-sm);
+  transition: var(--transition);
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink:focus-visible,
+.active {
   color: var(--primary);
-  text-decoration: none;
-}
-
-.navLink:focus {
-  color: var(--primary);
-  text-decoration: none;
 }
