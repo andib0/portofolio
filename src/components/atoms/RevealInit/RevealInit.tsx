@@ -1,10 +1,11 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-/* Mounts the scroll reveal observer once for the whole page. */
+/* Mounts the scroll reveal observer once, and renews it on every page. */
 const RevealInit = () => {
-  useScrollReveal();
+  useScrollReveal(usePathname());
   return null;
 };
 
