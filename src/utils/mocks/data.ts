@@ -11,10 +11,10 @@ export const site = {
   github: "https://github.com/andib0",
   linkedin: "https://www.linkedin.com/in/andibasha",
   instagram: "https://www.instagram.com/andibashaa",
-  source: "https://github.com/andib0/portofolio",
+  source: "https://github.com/andib0/portfolio",
   /** Public origin plus base path, without a trailing slash. */
   url: (
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://andib0.github.io/portofolio"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://andib0.github.io/portfolio"
   ).replace(/\/$/, ""),
   description:
     "Andi Basha is a JavaScript engineer in Prishtina, Kosovo. He builds A/B experiments for high-traffic online stores at Sogody, and local-first apps with React Native and Rust on the side.",
