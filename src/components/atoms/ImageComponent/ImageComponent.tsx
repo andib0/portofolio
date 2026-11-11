@@ -1,22 +1,16 @@
 import React from "react";
+import Image, { StaticImageData } from "next/image";
 import styles from "./ImageComponent.module.css";
-import Image from "next/image";
 
 type TImageComponent = {
-  imageSrc: string;
+  image: StaticImageData;
   alt: string;
 };
 
-const ImageComponent: React.FC<TImageComponent> = ({ imageSrc, alt }) => {
+const ImageComponent: React.FC<TImageComponent> = ({ image, alt }) => {
   return (
     <div className={styles.imageWrapper}>
-      <Image
-        className={styles.image}
-        src={imageSrc}
-        alt={alt}
-        fill
-        // style={{ objectFit: "cover" }}
-      />
+      <Image className={styles.image} src={image} alt={alt} fill />
     </div>
   );
 };

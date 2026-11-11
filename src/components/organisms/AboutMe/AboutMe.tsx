@@ -1,27 +1,26 @@
+import React from "react";
 import Description from "@/components/atoms/Description/Description";
 import ImageComponent from "@/components/atoms/ImageComponent/ImageComponent";
 import ListComponent from "@/components/atoms/ListComponent/ListComponent";
-import React from "react";
-import styles from "./AboutMe.module.css";
 import InfoTitle from "../InfoTitle/InfoTitle";
-type TAboutMe = {
-  imageSrc: string;
-  alt: string;
-  items: string[];
-};
-import useScrollReveal from "@/hooks/useScrollReveal";
+import styles from "./AboutMe.module.css";
+import profile from "@/assets/profile.webp";
 import {
   partOneDescription,
   partThreeDescription,
   partTwoDescription,
+  sections,
+  technologies,
 } from "@/utils/mocks/data";
 
-const AboutMe: React.FC<TAboutMe> = ({ imageSrc, alt, items }) => {
-  useScrollReveal();
+const AboutMe: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <section id={sections.about.id} className={styles.container}>
       <div className="reveal-section">
-        <InfoTitle title="About Me" number="01" />
+        <InfoTitle
+          title={sections.about.title}
+          number={sections.about.number}
+        />
         <div className={styles.innerContainer}>
           <div>
             <Description
@@ -29,12 +28,12 @@ const AboutMe: React.FC<TAboutMe> = ({ imageSrc, alt, items }) => {
               partTwoDescription={partTwoDescription}
               partThreeDescription={partThreeDescription}
             />
-            <ListComponent items={items} />
+            <ListComponent items={technologies} />
           </div>
-          <ImageComponent alt={alt} imageSrc={imageSrc} />
+          <ImageComponent alt="Portrait of Andi Basha" image={profile} />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
